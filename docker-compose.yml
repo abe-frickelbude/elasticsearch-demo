@@ -11,7 +11,7 @@ services:
     environment:
       - ES_JAVA_OPTS = "-Xms512m -Xmx512m"
     
-    command: "elasticsearch -Des.node.master=true"
+    command: "elasticsearch -Ees.node.master=true"
 
   es-node-2:
     image: es-demo
@@ -23,7 +23,7 @@ services:
     environment:
       - ES_JAVA_OPTS = "-Xms512m -Xmx512m"
     
-    command: "elasticsearch -Des.discovery.zen.ping.unicast.hosts=es-master-node"  
+    command: "elasticsearch -Ees.discovery.zen.ping.unicast.hosts=es-master-node"  
     links:
       - es-master-node
 
@@ -38,6 +38,6 @@ services:
     environment:
       - ES_JAVA_OPTS = "-Xms512m -Xmx512m"
       
-    command: "elasticsearch -Des.discovery.zen.ping.unicast.hosts=es-master-node"
+    command: "elasticsearch -Ees.discovery.zen.ping.unicast.hosts=es-master-node"
     links:
       - es-master-node
