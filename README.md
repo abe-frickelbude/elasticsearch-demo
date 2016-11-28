@@ -2,7 +2,7 @@
 
 ---
 
-## Pre-requisits
+## Pre-requisites
 
 * git
 * docker and docker-compose
@@ -16,7 +16,6 @@
 	or `docker-compose up es-master-node` to start a standalone ES node.
 5. Open the index.html from previously cloned **elasticsearch-head** in your fav'rite browser (this is a standalone web-app)
 6. type http://localhost:9200 into the box next to the connect button and hit **"Connect"**
-
 
 
 ## Notes 
