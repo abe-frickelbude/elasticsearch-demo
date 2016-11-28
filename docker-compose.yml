@@ -2,21 +2,18 @@ version: '2'
 services:
 
   es-master-node:
-  
     image: es-demo
     
     ports:
       - "9200:9200"
       - "9300:9300"
     
-    
     environment:
-      - ES_HEAP_SIZE=512m
+      - ES_JAVA_OPTS = "-Xms512m -Xmx512m"
     
     command: "elasticsearch -Des.node.master=true"
 
   es-node-2:
-  
     image: es-demo
     
     ports:
@@ -24,10 +21,9 @@ services:
       - "9310:9300"
     
     environment:
-      - ES_HEAP_SIZE=512m
+      - ES_JAVA_OPTS = "-Xms512m -Xmx512m"
     
-    command: "elasticsearch -Des.discovery.zen.ping.unicast.hosts=es-master-node"
-    
+    command: "elasticsearch -Des.discovery.zen.ping.unicast.hosts=es-master-node"  
     links:
       - es-master-node
 
@@ -40,9 +36,8 @@ services:
       - "9320:9300"
     
     environment:
-      - ES_HEAP_SIZE=512m
+      - ES_JAVA_OPTS = "-Xms512m -Xmx512m"
       
     command: "elasticsearch -Des.discovery.zen.ping.unicast.hosts=es-master-node"
-    
     links:
       - es-master-node
