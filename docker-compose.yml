@@ -1,21 +1,33 @@
-
 version: '2'
 services:
 
-  es-node-1:
-    image: "es-demo"
+  es-master-node:
+    image: es-demo
     ports:
-      - "9200:9200"
-      - "9300:9300"
-      
+    - 9200:9200
+    - 9300:9300
+    environment:
+    - ES_HEAP_SIZE=512m
+    command: elasticsearch -Des.node.master=true
+
   es-node-2:
-    image: "es-demo"
+    image: es-demo
     ports:
-      - "9210:9200"
-      - "9310:9300"    
-  
+    - 9210:9200
+    - 9310:9300
+    environment:
+    - ES_HEAP_SIZE=512m
+  command: elasticsearch -Des.discovery.zen.ping.unicast.hosts=es-master-node
+  links:
+  - es-master-node
+
   es-node-3:
-    image: "es-demo"
+    image: es-demo
     ports:
-      - "9220:9200"
-      - "9320:9300"
+    - 9220:9200
+    - 9320:9300
+    environment:
+    - ES_HEAP_SIZE=512m
+    command: elasticsearch -Des.discovery.zen.ping.unicast.hosts=es-master-node
+    links:
+    - es-master-node
