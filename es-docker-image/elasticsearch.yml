@@ -1,5 +1,5 @@
 
-cluster.name: "demo_es_cluster"
+cluster.name: "es-demo-cluster"
 network.host: 0.0.0.0
 
 http.cors.enabled: true
