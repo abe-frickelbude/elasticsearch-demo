@@ -28,7 +28,6 @@ services:
       - es-master-node
 
   es-node-3:
-  
     image: es-demo
     
     ports:

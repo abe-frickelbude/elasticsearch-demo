@@ -17,6 +17,8 @@
 	or `docker-compose up es-master-node` to start a stand-alone ES node.
 5. Open the index.html from previously cloned **elasticsearch-head** in your fav'rite browser (this is a stand-alone web-app)
 6. type http://localhost:9200 into the box next to the connect button and hit **"Connect"**
+7. Optionally, clone **ElasticsearchHQ** application: https://github.com/royrusso/elasticsearch-HQ
+This allows for more comprehensive and user-friendly administration of the cluster (compared e.g. to elasticsearch-head)
 
 
 ## Notes 
