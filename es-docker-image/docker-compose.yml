@@ -1,4 +1,9 @@
 
-version: 2
+version: '2'
 services:
-  
+  es-node-1:
+    image: es-demo:latest
+    ports:
+      -"9200:9200"
+      -"9300:9300"
+      
