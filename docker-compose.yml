@@ -24,7 +24,10 @@ services:
       - ES_JAVA_OPTS = "-Xms512m -Xmx512m"
     
     command: "elasticsearch -Ediscovery.zen.ping.unicast.hosts=es-master-node"  
-    links:
+    #links:
+    #  - es-master-node
+      
+    depends_on:
       - es-master-node
 
   es-node-3:
@@ -39,5 +42,8 @@ services:
       - ES_JAVA_OPTS = "-Xms512m -Xmx512m"
       
     command: "elasticsearch -Ediscovery.zen.ping.unicast.hosts=es-master-node"
-    links:
-      - es-master-node
+    #links:
+    #  - es-master-node
+      
+    depends_on:
+      - es-master-node  
