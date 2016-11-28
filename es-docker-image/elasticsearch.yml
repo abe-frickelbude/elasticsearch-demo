@@ -1,5 +1,5 @@
 
-cluster.name: "docker-cluster"
+cluster.name: "demo_es_cluster"
 network.host: 0.0.0.0
 
 http.cors.enabled: true
