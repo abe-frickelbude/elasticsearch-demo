@@ -1,7 +1,7 @@
 version: '2'
 services:
 
-  e-master-node:
+  es-master-node:
     image: es-demo
     
     ports:
