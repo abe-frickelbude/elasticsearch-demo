@@ -17,8 +17,8 @@ services:
     image: es-demo
     
     ports:
-      - "9210:9200"
-      - "9310:9300"
+      - "9200"
+      - "9300"
     
     environment:
       - ES_JAVA_OPTS = "-Xms512m -Xmx512m"
@@ -32,8 +32,8 @@ services:
     image: es-demo
     
     ports:
-      - "9220:9200"
-      - "9320:9300"
+      - "9200"
+      - "9300"
     
     environment:
       - ES_JAVA_OPTS = "-Xms512m -Xmx512m"
