@@ -9,7 +9,7 @@ services:
       - "9300:9300"
     
     environment:
-      - ES_JAVA_OPTS = "-Xms512m -Xmx512m"
+      - ES_JAVA_OPTS = "-Xms128m -Xmx256m"
     
     command: "elasticsearch -Enode.master=true"
 
@@ -21,7 +21,7 @@ services:
       - "9300"
     
     environment:
-      - ES_JAVA_OPTS = "-Xms512m -Xmx512m"
+      - ES_JAVA_OPTS = "-Xms128m -Xmx256m"
     
     command: "elasticsearch -Ediscovery.zen.ping.unicast.hosts=es-master-node"    
     depends_on:
@@ -35,7 +35,7 @@ services:
       - "9300"
     
     environment:
-      - ES_JAVA_OPTS = "-Xms512m -Xmx512m"
+      - ES_JAVA_OPTS = "-Xms128m -Xmx256m"
       
     command: "elasticsearch -Ediscovery.zen.ping.unicast.hosts=es-master-node"
     depends_on:
